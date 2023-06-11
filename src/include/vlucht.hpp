@@ -7,5 +7,5 @@ private:
 
 public:
     Vlucht(int kosten);
-    int getKosten();
+    int getKosten() override;
 };

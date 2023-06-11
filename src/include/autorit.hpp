@@ -7,5 +7,5 @@ private:
 
 public:
     Auto(int kosten);
-    int getKosten();
+    int getKosten() override;
 };

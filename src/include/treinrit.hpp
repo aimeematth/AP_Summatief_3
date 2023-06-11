@@ -7,5 +7,5 @@ private:
 
 public:
     Treinrit(int kosten);
-    int getKosten();
+    int getKosten() override;
 };

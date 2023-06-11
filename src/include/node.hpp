@@ -7,11 +7,11 @@ class Edge;
 
 class Node {
 public:
-    std::string label;
+    std::string station;
     std::vector<Edge*> edges;
     int minimalDistance;
 
-    Node(std::string label);
+    Node(std::string station);
 
     friend std::ostream& operator<<(std::ostream& os, Node& node);
 
