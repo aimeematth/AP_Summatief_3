@@ -1,4 +1,4 @@
-#include "autorit.hpp"
+#include "include/autorit.hpp"
 
 Auto::Auto(int kosten) : kosten(kosten) {}
 

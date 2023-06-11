@@ -1,7 +1,7 @@
+
 #include "include/graph.hpp"
 #include "include/node.hpp"
 #include "include/edge.hpp"
-#include "include/stap.hpp"
 #include "include/autorit.hpp"
 #include "include/treinrit.hpp"
 #include "include/vlucht.hpp"
@@ -15,19 +15,15 @@ int main() {
     Node* nodeC = new Node("C");
     Node* nodeD = new Node("D");
 
-    // Create some stap instances
-    Stap* autoStep = new Auto(10);
-    Stap* treinritStep = new Treinrit(5);
-    Stap* vluchtStep = new Vlucht(50);
+    // Create some edges
+    Edge* edgeAB = new Edge(nodeA, nodeB, (new Auto(10))->getKosten());
+    Edge* edgeAC = new Edge(nodeA, nodeC, (new Treinrit(5))->getKosten());
+    Edge* edgeBD = new Edge(nodeB, nodeD, (new Vlucht(50))->getKosten());
+    Edge* edgeCD = new Edge(nodeC, nodeD, (new Auto(20))->getKosten());
 
     // Create a graph and add nodes and edges
     std::vector<Node*> nodes = {nodeA, nodeB, nodeC, nodeD};
-    std::vector<Edge*> edges = {
-        new Edge(nodeA, nodeB, autoStep),
-        new Edge(nodeA, nodeC, treinritStep),
-        new Edge(nodeB, nodeD, vluchtStep),
-        new Edge(nodeC, nodeD, autoStep)
-    };
+    std::vector<Edge*> edges = {edgeAB, edgeAC, edgeBD, edgeCD};
     Graph graph(nodes, edges);
 
     // Perform some operations on the graph
@@ -37,22 +33,9 @@ int main() {
     // Display the shortest path and the cost
     std::cout << "Shortest Path: ";
     for (Node* node : shortestPath) {
-        std::cout << node->label() << " ";
+        std::cout << node->label << " ";
     }
     std::cout << std::endl;
     std::cout << "Path Cost: " << pathCost << std::endl;
-
-    delete autoStep;
-    delete treinritStep;
-    delete vluchtStep;
-    delete nodeA;
-    delete nodeB;
-    delete nodeC;
-    delete nodeD;
-
-    for (Edge* edge : edges) {
-        delete edge;
-    }
-
     return 0;
-}
+};

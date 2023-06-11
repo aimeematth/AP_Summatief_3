@@ -1,5 +1,5 @@
 #pragma once
-#include "Stap.hpp"
+#include "stap.hpp"
 
 class Auto : public Stap {
 private:

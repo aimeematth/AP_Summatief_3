@@ -1,4 +1,4 @@
-#include "treinrit.hpp"
+#include "include/treinrit.hpp"
 
 Treinrit::Treinrit(int kosten) : kosten(kosten) {}
 

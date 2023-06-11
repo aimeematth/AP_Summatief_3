@@ -1,13 +1,14 @@
 #pragma once
 #include "node.hpp"
+#include <iostream>
 
 class Edge {
-    public:
-        Node* from;
-        Node* to;
-        Stap* cost;
+public:
+    Node* from;
+    Node* to;
+    int cost;
 
-    Edge(Node* from, Node* to, Stap* cost);
+    Edge(Node* from, Node* to, int cost);
 
-    friend std::ostream &operator<<(std::ostream& os, Edge& edge);
+    friend std::ostream& operator<<(std::ostream& os, Edge& edge);
 };
