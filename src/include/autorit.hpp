@@ -1,11 +1,9 @@
 #pragma once
-#include "stap.hpp"
 
-class Auto : public Stap {
+class Auto {
 private:
     int kosten;
-
 public:
     Auto(int kosten);
-    int getKosten() override;
+    int getKosten();
 };

@@ -10,6 +10,8 @@ public:
     std::string station;
     std::vector<Edge*> edges;
     int minimalDistance;
+    Node* prev;
+
 
     Node(std::string station);
 
